@@ -1,7 +1,7 @@
 import {Flags} from '@oclif/core'
 import {promises as fs} from 'node:fs'
 import {fromBuffer} from 'file-type'
-import {BaseCommand} from '../base/base-command'
+import {BaseCommand} from '../../base/base-command'
 
 export default class StorageGet extends BaseCommand<any> {
   static description = 'Receives an objectId calling findObject to return the Object as Uint8Array.'
@@ -29,5 +29,6 @@ export default class StorageGet extends BaseCommand<any> {
     const filename = `${objectId}.${fileType?.ext}`
     await fs.writeFile(`./${filename}`, object, {})
     this.log(`Write file to ./${filename}`)
+    this.exit(0)
   }
 }

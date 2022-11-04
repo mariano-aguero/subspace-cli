@@ -1,10 +1,13 @@
-import {expect, test} from '@oclif/test'
+import {test} from '@oclif/test'
+import {assert} from 'chai'
 
 describe('storage:put', () => {
   test
   .stdout()
+  .stderr()
   .command(['storage:put', '--file', './example.jpeg'])
-  .it('runs storage:put', ctx => {
-    expect(ctx.stdout).to.contain('Object Id: ')
+  .catch(/EEXIT: 0/)
+  .it('runs storage:put --file ./example.jpeg', ctx => {
+    assert.include(ctx.stdout, '', 'Object Id: ')
   })
 })

@@ -1,6 +1,6 @@
 import {Flags, CliUx} from '@oclif/core'
 import {promises as fs} from 'node:fs'
-import {BaseCommand} from '../base/base-command'
+import {BaseCommand} from '../../base/base-command'
 
 export default class StoragePut extends BaseCommand<any> {
   static description = 'Receives an Object as Uint8Array, it create and submit a signed put transaction and return an objectId.'
@@ -27,5 +27,6 @@ export default class StoragePut extends BaseCommand<any> {
     const objectId: string = await this.subspaceClient.putObject(objectData)
     CliUx.ux.action.stop()
     this.log(`Object Id: ${objectId}`)
+    this.exit(0)
   }
 }
