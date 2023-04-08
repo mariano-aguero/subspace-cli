@@ -19,7 +19,7 @@
   "dependencies": {
     "@oclif/core": "^1.26.2",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.3.2",
+    "@oclif/plugin-plugins": "^2.4.4",
     "@subspace/subspace": "^0.2.0",
     "@types/file-type": "^10.9.1",
     "file-type": "^16.0.0"
